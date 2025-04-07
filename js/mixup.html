@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Up Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mix Up</h1>
+    
+    <p>Create a function called mixUp. It should take in two strings, and return the concatenation of the two strings (separated by a space) slicing out and swapping the first 2 characters of each. You can assume that the strings are at least 2 characters long.</p>
+    
+    <div>
+        <label for="string1">First String:</label>
+        <input type="text" id="string1" placeholder="Enter first string">
+    </div>
+    
+    <div>
+        <label for="string2">Second String:</label>
+        <input type="text" id="string2" placeholder="Enter second string">
+    </div>
+    
+    <button onclick="performMixUp()">Mix Up Strings</button>
+    
+    <div class="output" id="result"></div>
+    
+    <script>
+        function mixUp(str1, str2) {
+            if (str1.length < 2 || str2.length < 2) {
+                return "Both strings must be at least 2 characters long";
+            }
+            
+            const newStr1 = str2.slice(0, 2) + str1.slice(2);
+            const newStr2 = str1.slice(0, 2) + str2.slice(2);
+            
+            return newStr1 + " " + newStr2;
+        }
+        
+        function performMixUp() {
+            const string1 = document.getElementById("string1").value;
+            const string2 = document.getElementById("string2").value;
+            
+            const result = mixUp(string1, string2);
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+</html>
