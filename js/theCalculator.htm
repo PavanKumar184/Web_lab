@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .result {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Calculator</h1>
+    
+    <div>
+        <h2>Square a Number</h2>
+        <input type="number" id="squareInput" placeholder="Enter a number">
+        <button onclick="SquareNumber()">Square It</button>
+        <div id="squareResult" class="result"></div>
+    </div>
+
+    <div>
+        <h2>Half a Number</h2>
+        <input type="number" id="halfInput" placeholder="Enter a number">
+        <button onclick="HalfNumber()">Half It</button>
+        <div id="halfResult" class="result"></div>
+    </div>
+
+    <div>
+        <h2>Percent Of</h2>
+        <input type="number" id="percentInput1" placeholder="First number">
+        <input type="number" id="percentInput2" placeholder="Second number">
+        <button onclick="PercentOf()">Calculate Percent</button>
+        <div id="percentResult" class="result"></div>
+    </div>
+
+    <div>
+        <h2>Area of Circle</h2>
+        <input type="number" id="radiusInput" placeholder="Enter radius">
+        <button onclick="AreaOfCircle()">Calculate Area</button>
+        <div id="areaResult" class="result"></div>
+    </div>
+
+    <div>
+        <h2>Combined Operations</h2>
+        <input type="number" id="combinedInput" placeholder="Enter a number">
+        <button onclick="CombinedOperations()">Run Operations</button>
+        <div id="combinedResult" class="result"></div>
+    </div>
+
+    <script>
+        function SquareNumber() {
+            const num = parseFloat(document.getElementById("squareInput").value);
+            const result = num * num;
+            document.getElementById("squareResult").innerHTML = "The result of squaring the number " + num + " is " + result + ".";
+        }
+
+        function HalfNumber() {
+            const num = parseFloat(document.getElementById("halfInput").value);
+            const result = num / 2;
+            document.getElementById("halfResult").innerHTML = "Half of " + num + " is " + result + ".";
+        }
+
+        function PercentOf() {
+            const num1 = parseFloat(document.getElementById("percentInput1").value);
+            const num2 = parseFloat(document.getElementById("percentInput2").value);
+            const result = (num1 / num2) * 100;
+            document.getElementById("percentResult").innerHTML = num1 + " is " + result + "% of " + num2 + ".";
+        }
+
+        function AreaOfCircle() {
+            const radius = parseFloat(document.getElementById("radiusInput").value);
+            const area = Math.PI * radius * radius;
+            const result = Math.round(area * 100) / 100;
+            document.getElementById("areaResult").innerHTML = "The area for a circle with radius " + radius + " is " + result + ".";
+        }
+
+        function CombinedOperations() {
+            const num = parseFloat(document.getElementById("combinedInput").value);
+            
+            const half = num / 2;
+            const squared = half * half;
+            const area = Math.round(Math.PI * squared * squared * 100) / 100;
+            const percentage = (area / (squared * squared)) * 100;
+            
+            let output = "Starting with: " + num + "<br>";
+            output += "1. Half: " + half + "<br>";
+            output += "2. Squared: " + squared + "<br>";
+            output += "3. Area of circle with radius " + squared + ": " + area + "<br>";
+            output += "4. Percentage of area compared to squared value squared: " + percentage + "%";
+            
+            document.getElementById("combinedResult").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

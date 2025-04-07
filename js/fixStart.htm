@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Start Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 600px;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fix Start</h1>
+    <div class="container">
+        <p>
+            Create a function called fixStart. It should take a single argument, a string, and return a version where all occurences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long.
+        </p>
+        <div class="input-group">
+            <label for="inputString">Input string:</label>
+            <input type="text" id="inputString" placeholder="Enter a string">
+        </div>
+        <button onclick="processString()">Process</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function fixStart(str) {
+            if (str.length <= 1) {
+                return str;
+            }
+            
+            const firstChar = str.charAt(0);
+            const remainingChars = str.substring(1);
+            const replacedRemainder = remainingChars.replaceAll(firstChar, '*');
+            
+            return firstChar + replacedRemainder;
+        }
+
+        function processString() {
+            const inputStr = document.getElementById('inputString').value;
+            if (inputStr.length === 0) {
+                alert('Please enter a string with at least one character.');
+                return;
+            }
+            
+            const result = fixStart(inputStr);
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
