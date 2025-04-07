@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate English to Swedish</title>
+</head>
+<body>
+    <h3>Q7. Represent a small bilingual lexicon as a Javascript object in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"} and use it to translate your Christmas cards from English into Swedish.</h3>
+    <input type="text" id="word" placeholder="Enter a word in English">
+    <button onclick="translateWord()">Translate the word</button>
+    <p id="result7"></p>
+    <script>
+        function translateWord() {
+            var lexicon = {
+                "merry": "god",
+                "christmas": "jul",
+                "and": "och",
+                "happy": "gott",
+                "new": "nytt",
+                "year": "år"
+            };
+            var word = document.getElementById("word").value;
+            var word1 = word.split(" ");
+            var translated = "";
+            for (var i = 0; i < word1.length; i++) {
+                if (lexicon[word1[i]]) {
+                    translated += lexicon[word1[i]] + " ";
+                } else {
+                    translated += word1[i] + " ";
+                }
+            }
+            document.getElementById("result7").innerHTML = "The translated word is: " + translated;
+        }
+    </script>
+</body>
+</html>

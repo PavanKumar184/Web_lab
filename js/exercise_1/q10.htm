@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the frequency of characters</title>
+</head>
+<body>
+    <h3>Q10. Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").</h3>
+    <input type="text" id="str1" placeholder="Enter a string">
+    <button onclick="charFreq()">Find the frequency of characters</button>
+    <p id="result10"></p>
+    <script>
+        function charFreq() {
+            var str4 = document.getElementById("str1").value;
+            var freq = {};
+            for (var k = 0; k < str4.length; k++) {
+                if (freq[str4[k]]) {
+                    freq[str4[k]]++;
+                } else {
+                    freq[str4[k]] = 1;
+                }
+            }
+            document.getElementById("result10").innerHTML = "The frequency of characters is: " + JSON.stringify(freq);
+        }
+    </script>
+</body>
+</html>

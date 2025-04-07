@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the length of the longest word</title>
+</head>
+<body>
+    <h3>Q8. Write a function findLongestWord() that takes an array of words and returns the length of the longest one.</h3>
+    <input type="text" id="words" placeholder="Enter words separated by commas">
+    <button onclick="findLongestWord()">Find the longest word</button>
+    <p id="result8"></p>
+    <script>
+        function findLongestWord() {
+            var words = document.getElementById("words").value;
+            var words1 = words.split(",");
+            var longest = 0;
+            for (var i = 0; i < words1.length; i++) {
+                if (words1[i].length > longest) {
+                    longest = words1[i].length;
+                }
+            }
+            document.getElementById("result8").innerHTML = "The length of the longest word is: " + longest;
+        }
+    </script>
+</body>
+</html>

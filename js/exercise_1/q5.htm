@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and multiply numbers in an array</title>
+</head>
+<body>
+    <h3>Q5. Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.</h3>
+    <input type="text" id="numbers" placeholder="Enter comma separated numbers">
+    <button onclick="sum()">Find the sum</button>
+    <button onclick="multiply()">Find the product</button>
+    <p id="result5"></p>
+    <script>
+        function sum() {
+            var numbers = document.getElementById("numbers").value;
+            var numbers1 = numbers.split(",");
+            var sum = 0;
+            for (var i = 0; i < numbers1.length; i++) {
+                sum += parseInt(numbers1[i]);
+            }
+            document.getElementById("result5").innerHTML = "The sum of the numbers is: " + sum;
+        }
+        function multiply() {
+            var numbers = document.getElementById("numbers").value;
+            var numbers1 = numbers.split(",");
+            var product = 1;
+            for (var i = 0; i < numbers1.length; i++) {
+                product *= parseInt(numbers1[i]);
+            }
+            document.getElementById("result5").innerHTML = "The product of the numbers is: " + product;
+        }
+    </script>
+</body>
+</html>

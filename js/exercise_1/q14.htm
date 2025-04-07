@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h3>Q14. Create registration form webpage for your site with the following form fields - Name, User name, password and confirm password (both must be the same), year of birth and email, a checkbox for the use to select that he/she agree to the terms and conditions of the website</h3>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="username">User name:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="confirmPassword">Confirm password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+        <label for="yearOfBirth">Year of birth:</label>
+        <input type="text" id="yearOfBirth" name="yearOfBirth" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions of the website</label><br><br>
+        <button type="button" onclick="validate()">Submit</button>
+    </form>
+    <p id="result14"></p>
+    <script>
+        function validate() {
+            var name1 = document.getElementById("name").value;
+            var username1 = document.getElementById("username").value;
+            var password1 = document.getElementById("password").value;
+            var confirmPassword1 = document.getElementById("confirmPassword").value;
+            var yearOfBirth1 = document.getElementById("yearOfBirth").value;
+            var email1 = document.getElementById("email").value;
+            var terms1 = document.getElementById("terms").checked;
+            if (password1 != confirmPassword1) {
+                document.getElementById("result14").innerHTML = "The passwords do not match";
+            } else if (name1 == "" || username1 == "" || password1 == "" || confirmPassword1 == "" || yearOfBirth1 == "" || email1 == "" || !terms1) {
+                document.getElementById("result14").innerHTML = "Please fill in all the fields and agree to the terms and conditions";
+            } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email1)) {
+                document.getElementById("result14").innerHTML = "Please enter a valid email address";
+            } else if (yearOfBirth1.length != 4 || yearOfBirth1 < 1900 || yearOfBirth1 > 2000) {
+                document.getElementById("result14").innerHTML = "Please enter a valid year of birth";
+            } else {
+                document.getElementById("result14").innerHTML = "Registration successful";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort names</title>
+</head>
+<body>
+    <h3>Q12. Write a script that asks the user for a series of names until the user hits the cancel button. The script then sorts the names in alphabetical order and prints the names in an ordered list.</h3>
+    <button onclick="sortNames()">Enter names</button>
+    <p id="result12"></p>
+    <script>
+        function sortNames() {
+            var names = [];
+            var name;
+            while (name = prompt("Enter a name")) {
+                names.push(name);
+            }
+            names.sort();
+            document.getElementById("result12").innerHTML = "The names in alphabetical order are: " + names;
+        }
+    </script>
+</body>
+</html>

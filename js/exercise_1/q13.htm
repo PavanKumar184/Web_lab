@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate random numbers</title>
+</head>
+<body>
+    <h3>Q13. Write a script that asks the user how many random numbers they wish to generate. The script then generates the numbers and calculates the average of the numbers and returns the results to the user</h3>
+    <button onclick="generateNumbers()">Generate random numbers</button>
+    <p id="result13"></p>
+    <script>
+        function generateNumbers() {
+            var n = parseInt(prompt("How many random numbers do you wish to generate?"));
+            var numbers2 = [];
+            var sum2 = 0;
+            for (var l = 0; l < n; l++) {
+                numbers2[l] = Math.floor(Math.random() * 100);
+                sum2 += numbers2[l];
+            }
+            var average = sum2 / n;
+            document.getElementById("result13").innerHTML = "The random numbers are: " + numbers2 + "<br>The average of the numbers is: " + average;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter long words</title>
+</head>
+<body>
+    <h3>Q9. Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.</h3>
+    <input type="text" id="words1" placeholder="Enter words separated by commas">
+    <input type="text" id="i" placeholder="Enter an integer">
+    <button onclick="filterLongWords()">Find the words longer than i</button>
+    <p id="result9"></p>
+    <script>
+        function filterLongWords() {
+            var words2 = document.getElementById("words1").value;
+            var i = parseInt(document.getElementById("i").value);
+            var words3 = words2.split(",");
+            var longWords = [];
+            for (var j = 0; j < words3.length; j++) {
+                if (words3[j].length > i) {
+                    longWords.push(words3[j]);
+                }
+            }
+            document.getElementById("result9").innerHTML = "The words longer than " + i + " are: " + longWords;
+        }
+    </script>
+</body>
+</html>

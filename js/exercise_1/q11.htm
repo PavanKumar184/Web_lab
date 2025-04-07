@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h3>Q11. Design a calculator using java script.</h3>
+    <input type="text" id="num6" placeholder="Enter first number">
+    <input type="text" id="num7" placeholder="Enter second number">
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply1()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <p id="result11"></p>
+    <script>
+        function add() {
+            var num6 = parseInt(document.getElementById("num6").value);
+            var num7 = parseInt(document.getElementById("num7").value);
+            var sum1 = num6 + num7;
+            document.getElementById("result11").innerHTML = "The sum is: " + sum1;
+        }
+        function subtract() {
+            var num6 = parseInt(document.getElementById("num6").value);
+            var num7 = parseInt(document.getElementById("num7").value);
+            var difference = num6 - num7;
+            document.getElementById("result11").innerHTML = "The difference is: " + difference;
+        }
+        function multiply1() {
+            var num6 = parseInt(document.getElementById("num6").value);
+            var num7 = parseInt(document.getElementById("num7").value);
+            var product1 = num6 * num7;
+            document.getElementById("result11").innerHTML = "The product is: " + product1;
+        }
+        function divide() {
+            var num6 = parseInt(document.getElementById("num6").value);
+            var num7 = parseInt(document.getElementById("num7").value);
+            var quotient = num6 / num7;
+            document.getElementById("result11").innerHTML = "The quotient is: " + quotient;
+        }
+    </script>
+</body>
+</html>

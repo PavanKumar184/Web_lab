@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the largest of three numbers</title>
+</head>
+<body>
+    <h3>Q2. Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.</h3>
+    <input type="text" id="num3" placeholder="Enter first number">
+    <input type="text" id="num4" placeholder="Enter second number">
+    <input type="text" id="num5" placeholder="Enter third number">
+    <button onclick="maxOfThree()">Find the largest number</button>
+    <p id="result2"></p>
+    <script>
+        function maxOfThree() {
+            var num3 = parseInt(document.getElementById("num3").value);
+            var num4 = parseInt(document.getElementById("num4").value);
+            var num5 = parseInt(document.getElementById("num5").value);
+            if (num3 > num4 && num3 > num5) {
+                document.getElementById("result2").innerHTML = "The largest number is: " + num3;
+            } else if (num4 > num3 && num4 > num5) {
+                document.getElementById("result2").innerHTML = "The largest number is: " + num4;
+            } else {
+                document.getElementById("result2").innerHTML = "The largest number is: " + num5;
+            }
+        }
+    </script>
+</body>
+</html>

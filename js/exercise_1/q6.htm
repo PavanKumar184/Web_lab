@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a string</title>
+</head>
+<body>
+    <h3>Q6. Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".</h3>
+    <input type="text" id="str" placeholder="Enter a string">
+    <button onclick="reverse()">Reverse the string</button>
+    <p id="result6"></p>
+    <script>
+        function reverse() {
+            var str = document.getElementById("str").value;
+            var str1 = str.split("");
+            var str2 = str1.reverse();
+            var str3 = str2.join("");
+            document.getElementById("result6").innerHTML = "The reversed string is: " + str3;
+        }
+    </script>
+</body>
+</html>

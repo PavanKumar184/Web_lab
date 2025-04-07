@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate text to rövarspråket</title>
+</head>
+<body>
+    <h3>Q4. Write a function translate() that will translate a text into "rövarspråket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".</h3>
+    <input type="text" id="text4" placeholder="Enter a text">
+    <button onclick="translate()">Translate the text</button>
+    <p id="result4"></p>
+    <script>
+        function translate() {
+            var text = document.getElementById("text4").value;
+            var text1 = text.split("");
+            var text2 = "";
+            for (var i = 0; i < text1.length; i++) {
+                if (text1[i] == "a" || text1[i] == "e" || text1[i] == "i" || text1[i] == "o" || text1[i] == "u" || text1[i] == " ") {
+                    text2 += text1[i];
+                } else {
+                    text2 += text1[i] + "o" + text1[i];
+                }
+            }
+            document.getElementById("result4").innerHTML = "The translated text is: " + text2;
+        }
+    </script>
+</body>
+</html>

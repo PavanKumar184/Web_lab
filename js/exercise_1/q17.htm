@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display User Details</title>
+</head>
+<body>
+    <h3>Q17. Create a form that asks the user to enter their name, age, and hometown. When the user presses the Submit button, call a JavaScript function. The JavaScript function should perform the following actions:
+        display the user's name and year they were born (depending on actual date of birth) on the webpage below the form.
+        display a link to Google (or Bing) search results for the name of their hometown.</h3>
+    <form>
+        <label for="name1">Name:</label>
+        <input type="text" id="name1" name="name1" required><br><br>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required><br><br>
+        <label for="hometown">Hometown:</label>
+        <input type="text" id="hometown" name="hometown" required><br><br>
+        <button type="button" onclick="displayDetails()">Submit</button>
+    </form>
+    <p id="result17"></p>
+    <script>
+        function displayDetails() {
+            var name2 = document.getElementById("name1").value;
+            var age1 = parseInt(document.getElementById("age").value);
+            var hometown1 = document.getElementById("hometown").value;
+            var yearOfBirth2 = new Date().getFullYear() - age1;
+            document.getElementById("result17").innerHTML = "Your name is " + name2 + " and you were born in " + yearOfBirth2 + "<br><a href='https://www.google.com/search?q=" + hometown1 + "' target='_blank'>Search for " + hometown1 + "</a>";
+        }
+    </script>
+</body>
+</html>
